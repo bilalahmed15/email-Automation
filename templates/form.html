@@ -1,0 +1,221 @@
+<!DOCTYPE html>
+<html>
+<head>
+    <style>
+        body {
+            background-color: #f3f2fc; /* light purple */
+            color: #000000; /* text color */
+            font-family: Arial, sans-serif;
+        }
+
+        h2 {
+            text-align: center;
+            color: #6c63ff; /* darker purple */
+            font-size: 2.5em;
+        }
+
+        form {
+            max-width: 800px;
+            margin: 20px auto;
+            padding: 30px;
+            background: #fff;
+            border-radius: 5px;
+            box-shadow: 0 0 10px rgba(0,0,0,0.1);
+        }
+
+        label {
+            display: block;
+            margin-bottom: 10px;
+            font-size: 1.2em;
+        }
+
+        select, input[type="file"], input[type="submit"] {
+            width: 100%;
+            padding: 15px;
+            border-radius: 5px;
+            border: 1px solid #ddd;
+            margin-bottom: 25px;
+            font-size: 1.2em;
+        }
+
+        .file-input-label {
+            background: #6c63ff; /* darker purple */
+            color: #fff;
+            padding: 15px;
+            text-align: center;
+            display: block;
+            cursor: pointer;
+            margin-bottom: 10px;
+            font-size: 1.2em;
+        }
+
+        input[type="submit"] {
+            background: #6c63ff; /* darker purple */
+            color: #fff;
+            cursor: pointer;
+            border: none;
+        }
+
+        input[type="submit"]:hover {
+            background: #4a44db; /* even darker purple */
+        }
+    </style>
+
+    <script>
+        var emailsAndSubjectsByIndustry = {
+          "Marketing": {
+            "emails": [
+                "Are you ready to witness marketing miracles? I'm, representing Macarto, the ultimate AI solution provider in the marketing sector. We've joined forces with top brands, crafting mind-blowing campaigns that leave a lasting impact. Brace yourself, because we're about to take your business to the next level!\n\nHarnessing the power of artificial intelligence, Macarto transforms the way teams conquer social media and the digital market space. Our cutting-edge solutions supercharge customer engagement, turbocharge conversion rates, and send your revenue soaring to new heights. The possibilities are endless!\n\nAre you curious to learn more? Let's hop on a quick 20-30 minute call, where I'll unveil the secrets behind our success.\n\nSnag your spot on my calendar using this exclusive link:\n\nhttps://calendly.com/socials-rue/30min\n\nDon't miss out—time is running out!\n\nBut wait, there's more! During our call, I'll dive into the nitty-gritty of our AI-driven solutions and unveil customized strategies tailored to your business's unique needs. Imagine making data-driven decisions, streamlining workflows, and achieving jaw-dropping results—all thanks to Macarto's AI magic.\n\nReady to embark on this transformative journey? Explore the possibilities at https://macarto.ai/ where you'll find mind-blowing success stories and testimonials from our ecstatic clients.\n\nAre you still hesitating? Trust me, you won't regret taking this leap. Get ready to witness your marketing efforts turn into a masterpiece.\n\nTake the plunge and let Macarto work its wonders!\n\nMagically yours!",
+                "Hope you're having a legendary day! It's me again, representing Macarto—the masters of AI wizardry in marketing. I believe we can unlock untapped potential for your business.\n\nOur previous email must have piqued your curiosity about Macarto's AI-driven solutions. Don't let that spark fade! Picture your marketing strategies elevated to mythical proportions, leaving competitors trembling in awe.\n\nLet's embark on a 20-30 minute call to reveal the secrets behind our marketing sorcery. Snatch your exclusive spot on my calendar: https://calendly.com/socials-rue/30min\n\nThis call will be an extraordinary adventure you won't want to miss!\n\nWitness the realm of awe-inspiring testimonials and triumphs at macato.ai. See how Macarto has transformed ordinary businesses into legends.\n\nSeize this opportunity, and together, we'll rewrite the narrative of your marketing destiny!",
+                "The clock is ticking, and I couldn't bear the thought of your marketing dreams slipping away. Summoning you one last time to witness the extraordinary power of Macarto's AI mastery!\n\nhttps://calendly.com/socials-rue/30min\n\nImagine your brand soaring to celestial heights, propelled by our enchanting solutions. But time is fleeting, and this is your final opportunity to grasp the reins of greatness!\n\nClaim your exclusive 20-30 minute call, where we'll forge a path to unparalleled marketing glory.\n\nThis call will be the catalyst for your meteoric rise!\n\nSeek solace in the tales of triumph woven on our website at https://macarto.ai/ . Discover the legends who have been forever changed by the Macarto magic.\n\nDon't let your marketing aspirations fade away into oblivion. Seize this final opportunity, and let Macarto light your path to everlasting greatness!"
+            ],
+            "subjects": [
+                "Macarto AI Solutions for Recruitment - Request for Strategy Session",
+                "Ignite Your Marketing Mojo with Macarto's AI Mastery!",
+                "Last Chance to Ignite Your Marketing Marvel!"
+        ]
+      },
+      "Recruitment": {
+        "emails": [
+            "In the highly competitive recruitment industry, we understand the challenges you face in talent sourcing and optimizing the selection process. At Macarto, we specialize in leveraging AI technologies to drive remarkable results.\n\nI invite you to a strategy session where we can explore how our AI solutions can address your specific pain points and unlock new possibilities. Schedule the session at your convenience using the following calendly link: \n\nhttps://calendly.com/socials-rue/30min\n\nPartner with [Your Company Name] to stay ahead in recruitment and achieve unparalleled success.",
+            "I wanted to follow up on my previous message regarding the potential of AI solutions for your recruiting company.\n\nAt Macarto, we understand the competitive nature of the recruitment industry and the importance of efficient talent sourcing and selection processes. Our AI-powered solutions are designed to address these pain points and deliver remarkable results.\n\nI believe a strategy session would be valuable for us to further discuss how our tailored AI solutions can benefit your company. To schedule the session at your convenience, please let me know your availability, or use the following calendly link: \n\nhttps://calendly.com/socials-rue/30min\n\nI look forward to connecting with you and exploring the possibilities of AI-driven innovation for your recruiting operations."
+        ],
+        "subjects": [
+            "Macarto AI Solutions for Recruitment - Request for Strategy Session",
+            "Follow-up: AI Solutions for Recruitment - Request for Strategy Session"
+        ]
+    },
+    "Entrance Control": {
+        "emails": [
+            "I hope this email finds you well. We are a leading provider of AI solutions for various industries. We specialize in addressing challenges related to Entrance control.\n\nAs we have been following your company's impressive work in the field of entrance control, we believe that our AI-powered solutions can greatly benefit your organization. Our advanced technologies, including machine learning, computer vision, and data analytics, have proven to be highly effective in enhancing entrance control systems.\n\nWe would like to invite you to a complimentary strategy session where we can discuss how our AI solutions can specifically cater to your entrance control needs. During this session, we will have the opportunity to understand your pain points, assess your requirements, and outline a customized roadmap aligned with your goals.\n\nBy leveraging our AI capabilities, we can help optimize security measures, streamline access management processes, and enhance overall efficiency in entrance control systems. Our track record of successful implementations and satisfied clients speaks to the transformative potential of our solutions.\n\nWe genuinely believe that this strategy session will provide valuable insights and opportunities for collaboration. Please let us know your availability, and we will be happy to arrange a meeting at your convenience. We can connect via Calendly to discuss more.\n\nThank you for considering this invitation. We look forward to the possibility of working together to enhance your entrance control systems through AI.",
+            "I hope this email finds you well. I wanted to follow up on my previous message regarding the potential of AI solutions for your entrance control company.\n\nAt Marcato, we understand the unique challenges you face in areas such as compliance, efficiency, and fraud detection. Our expertise lies in leveraging cutting-edge AI technologies to deliver tangible results for our clients.\n\nI strongly believe that a strategy session would be highly valuable for us to explore how our bespoke AI solutions can specifically address your needs and drive transformative outcomes for your entrance control operations. To schedule the session at your convenience, please let me know your availability, or you can simply use the following Calendly link to book a time slot:\n\nhttps://calendly.com/socials-rue/30min\n\nI am genuinely excited about the opportunities AI can unlock for your organization, and I am confident that Marcato can be your trusted partner in this journey.\n\nThank you for considering this follow-up. I look forward to the opportunity to discuss in more detail how our AI solutions can revolutionize your entrance control systems.",
+            "I hope this email finds you well. I wanted to send a final reminder regarding Macarto AI Company Strategy Session on 'Enhancing Entrance Control with AI.' We highly value your expertise in the field of entrance control and are eager to have you as a participant in this crucial discussion.\n\nThe session is scheduled to take place on July 3, 2023, at 1pm Time. Your insights and contributions would greatly enrich the discourse as we explore innovative AI-driven solutions to enhance entrance control systems.\n\nWe understand that schedules can be demanding, but your presence at this session would be invaluable. By collaborating with other industry leaders and experts, we can collectively shape the future of entrance control systems and drive positive change within our field.\n\nKindly confirm your attendance to secure your seat at this exclusive event. Your unique perspective and experiences will make a significant impact on the outcomes of this session. If you have any questions or require any further information, please feel free to reach out to me directly at https://calendly.com/socials-rue/30min.\n\nThank you for considering our invitation, and we sincerely hope to see you at the AI Company Strategy Session. Together, let's explore the immense potential of AI in revolutionizing entrance control systems.",
+        ],
+        "subjects": [
+            "AI Solutions for Entrance Control - Request for Strategy Session",
+            "Follow-up: AI Solutions for Entrance Control - Request for Strategy Session",
+            "Final Reminder, Confirm Your Attendance for Our AI Company Strategy Session on Enhancing Entrance Control",
+        ]
+    },
+      "Finance": {
+          "emails": [
+              "As a leader in AI solutions for the fintech and financial industry, Macarto understands the challenges you face in areas such as compliance, efficiency, and fraud detection. Our expertise lies in leveraging cutting-edge AI technologies to deliver tangible results.\n\nWe offer bespoke AI solutions tailored to meet your specific needs, empowering you to make data-driven decisions, enhance customer experiences, and optimize operations. To explore the potential of AI solutions for your organization, I invite you to a complimentary strategy session. We will dive into your pain points, assess your requirements, and outline a roadmap aligned with your business goals.\n\nPartner with [Your Company Name] to unlock the full potential of AI and revolutionize your operations. Schedule your strategy session by contacting me directly or using the following Calendly link:\n\nhttps://calendly.com/socials-rue/30min",
+              "Hey, I wanted to follow up on my previous message regarding the potential of AI solutions for your fintech or financial company.\n\nAt Marcato, we understand the challenges you face in areas such as compliance, efficiency, and fraud detection. Our expertise lies in leveraging cutting-edge AI technologies to deliver tangible results.\n\nI believe a strategy session would be valuable for us to explore how our bespoke AI solutions can address your specific needs and drive transformative outcomes. To schedule the session at your convenience, please let me know your availability, or use the following Calendly link:\n\nhttps://calendly.com/socials-rue/30min\n\nI look forward to discussing the opportunities AI can unlock for your organization and how Marcato can be your trusted partner in this journey.",
+              "I wanted to extend a final opportunity for you to schedule a strategy session to explore the potential of AI solutions for your fintech or financial company.\n\nAt Marcato, we specialize in delivering bespoke AI solutions tailored to meet your specific needs, from compliance and efficiency to fraud detection. Our goal is to empower you with data-driven decision-making, enhanced customer experiences, and optimized operations.\n\nDon't miss out on the chance to discuss how our AI expertise can revolutionize your operations and drive transformative outcomes. Schedule your strategy session today by contacting me directly or using the following Calendly link:\n\nhttps://calendly.com/socials-rue/30min\n\nI look forward to connecting with you and discussing the exciting possibilities AI solutions can offer your organization."
+          ],
+          "subjects": [
+              "Macarto AI Solutions for Fintech and Financial Companies - Request for Strategy Session",
+              "Follow-up: AI Solutions for Fintech and Financial Companies",
+              "Final Opportunity: Strategy Session for AI Solutions in Fintech and Finance"
+          ]
+      },
+      "Pharma": {
+        "emails": [
+            "I am from Macarto, a leading provider of AI solutions for the pharmaceutical industry. We specialize in addressing challenges related to drug discovery, clinical trials, and regulatory compliance.\n\nOur AI-powered solutions streamline processes, accelerate drug discovery, and improve clinical trial efficiency. By leveraging machine learning, predictive analytics, and natural language processing, we empower pharmaceutical companies to make data-driven decisions and unlock growth opportunities.\n\nI invite you to a complimentary strategy session where we can explore how our AI solutions can benefit your organization. Let's discuss your specific pain points, assess your requirements, and outline a roadmap aligned with your goals. Schedule the session using the following Calendly link:\n\nhttps://calendly.com/socials-rue/30min\n\nPartner with Macarto to revolutionize your operations, enhance patient outcomes, and stay ahead in the competitive pharmaceutical industry.",
+            "I am from Macarto, and I wanted to follow up on my previous message regarding the potential of AI solutions for your pharmaceutical organization.\n\nAt Macarto, we understand the unique challenges you face in drug discovery, clinical trials, and regulatory compliance. Our AI-powered solutions are designed to address these pain points and deliver tangible results.\n\nI believe a strategy session would be valuable for us to further discuss how our tailored AI solutions can benefit your organization. To schedule the session at your convenience, please let me know your availability, or use the following Calendly link:\n\nhttps://calendly.com/socials-rue/30min\n\nI look forward to connecting with you and exploring the possibilities of AI-driven innovation for your pharmaceutical operations.",
+            "Again from Macarto. This is a final opportunity for you to schedule a strategy session to explore the potential of AI solutions for your pharmaceutical organization.\n\nAt Macarto, we specialize in developing AI-powered solutions that streamline processes, accelerate drug discovery, and improve clinical trial efficiency. Our expertise in machine learning, predictive analytics, and natural language processing can help you make data-driven decisions and unlock new growth opportunities.\n\nDon't miss out on the chance to discuss how our AI solutions can revolutionize your operations. Schedule your strategy session today by contacting me directly or using the following Calendly link:\n\nhttps://calendly.com/socials-rue/30min\n\nI look forward to connecting with you and discussing the exciting possibilities AI solutions can offer your pharmaceutical organization."
+        ],
+        "subjects": [
+            "AI Solutions for Pharma - Request for Strategy Session",
+            "Follow-up: AI Solutions for Pharma - Request for Strategy Session",
+            "Final Opportunity: Strategy Session for AI Solutions in Pharma"
+        ]
+    },
+    "Insurance": {
+        "emails": [
+            "Prepare to be spellbound as I unveil the greatest spectacle in insurance marketing! The mystical force behind Macarto—the enchanters of AI wizardry. Get ready to embark on an extraordinary journey!\n\nWe've forged alliances with illustrious brands, crafting spellbinding campaigns that defy the boundaries of the insurance industry. Our secret lies in wielding the untamed power of artificial intelligence, casting a mesmerizing spell that elevates customer engagement, ignites conversion rates, and conjures unimaginable revenue growth.\n\nPicture a world where your insurance business thrives with personalized customer experiences, leaving competitors gasping in awe. That's the magical realm Macarto's advanced AI tools bring to life!\n\nI'm thrilled to offer you an exclusive 20-30 minute call, where I'll unveil the secrets behind our spellbinding solutions. Together, we'll explore how Macarto's sorcery can cater to your insurance business's unique needs. Claim your coveted spot on my calendar using this extraordinary link:\n\nhttps://calendly.com/socials-rue/30min\n\nDon't dally—time is fleeting!\n\nYearning for a glimpse of the extraordinary transformations we've conjured for our insurance partners? Venture into our enchanting website at [Insert Website URL]. Prepare to be enchanted by mesmerizing success stories that bring the Macarto magic to life.\n\nUnleash the limitless power of AI in your insurance kingdom and revolutionize your marketing strategies. Dare to dream big and let Macarto's spellbinding guidance lead you to greatness!\n\nUnleashing the magic within,",
+            "Time is running out, and the magic is calling! Me, the Master Sorcerer of AI at Macarto, reaching out for one final summoning to ignite the AI revolution in your insurance kingdom!\n\nDon't let this chance vanish like a fleeting illusion! Our previous email must have sparked your curiosity. Now, I'm here to unleash the full potential of what awaits.\n\nEnvision your insurance realm crowned with the limitless power of AI—captivating customers with spellbinding personalized experiences and claiming unrivaled success. The possibilities are astonishing!\n\nThis is your last call to embark on a 20-30 minute journey with me, where I'll reveal the secrets behind our awe-inspiring solutions. Seize this final opportunity to reshape your marketing strategies. Secure your exclusive spot on my calendar:\n\nhttps://calendly.com/socials-rue/30min\n\nTrust me, this voyage will be extraordinary beyond imagination!\n\nStill hesitant? Delve into the enchanted tales of transformation on our website at macarto.ai. Witness the captivating results that await those who embrace the sorcery of Macarto.\n\nDon't let this opportunity fade away. Unleash the full potential of AI and let Macarto guide you to remarkable success!"
+        ],
+        "subjects": [
+            "Unleash the AI Revolution in Insurance Marketing with Macarto's Magic!",
+            "Last Chance: Ignite the AI Revolution in Your Insurance Kingdom!"
+        ]
+    },
+            "Real Estate": {
+                "emails": ["I wanted to introduce you to Marcato Services, a leading provider of AI solutions for real estate businesses. Our tailored approach helps address your unique challenges and unlock new opportunities for growth.\n\nMacarto specializes in optimizing property valuations, streamlining operations, improving customer experiences, and maximizing investment opportunities through the power of AI.\n\nLet's schedule a brief call to discuss how our tailored AI solutions can assist your real estate business. You can book a time slot via the Calendly link below:\n\nhttps://calendly.com/socials-rue/30min\n\nWith Macarto Services as your strategic partner, you can expect collaborative support to elevate your real estate business.",
+                      "I hope this email finds you well. I wanted to follow up on my previous message regarding Macarto Services and our tailored AI solutions for real estate businesses.\n\nAs a leading provider of AI solutions, we understand the unique challenges faced by the real estate industry. Our expertise lies in optimizing property valuations, streamlining operations, improving customer experiences, and maximizing investment opportunities through the power of AI.\n\nI would like to emphasize the benefits of partnering with Macarto Services. By leveraging our tailored AI solutions, you can:\n\n1. Optimize property valuations: Our AI algorithms analyze market trends, property data, and comparable sales to provide accurate and data-driven property valuations, enabling you to make informed decisions.\n\n2. Streamline operations: Automate routine tasks, streamline workflows, and enhance operational efficiency, freeing up valuable time and resources to focus on strategic initiatives.\n\n3. Improve customer experiences: Leverage AI-driven insights to understand customer preferences, personalize interactions, and deliver exceptional experiences, leading to increased satisfaction and loyalty.\n\n4. Maximize investment opportunities: Identify high-value investment opportunities, forecast market trends, and gain a competitive edge by leveraging predictive analytics and data-driven insights.\n\nI would be delighted to schedule a call to discuss how our tailored AI solutions can specifically benefit your real estate business. Simply use the Calendly link below to select a convenient time slot:\n\n https://calendly.com/socials-rue/30min\n\nWe are committed to collaborating closely with you, understanding your unique needs, and developing customized AI solutions that address your pain points effectively.\n\nThank you for considering Macarto Services. We look forward to the opportunity to discuss further and demonstrate how our exceptional AI services can help you unlock your real estate potential.",
+                      "I hope this email finds you well. I wanted to follow up on our previous discussions regarding Marcato Services and our tailored AI solutions for real estate businesses. This is the final opportunity for you to make an informed decision and take advantage of the immense benefits we offer.\n\nAt Macarto Services, we are committed to helping real estate businesses like yours unlock their full potential through AI-driven strategies. Our team of experts excels in optimizing property valuations, streamlining operations, improving customer experiences, and maximizing investment opportunities.\n\nHere are a few key reasons why choosing Macarto Services is the right decision for your real estate business:\n\n1. Expertise: Our team comprises experienced professionals who possess in-depth knowledge of the real estate industry and AI technologies. We have a proven track record of delivering exceptional results for our clients.\n\n2. Tailored Solutions: We understand that each real estate business is unique. That's why we offer customized AI solutions that address your specific pain points and goals. Our approach ensures that the solutions we develop align perfectly with your business needs.\n\n3. Cutting-Edge Technology: Macarto Services stays at the forefront of AI advancements. By leveraging the latest technologies and tools, we provide you with the most innovative and effective solutions available in the market.\n\n4. Collaborative Partnership: We believe in building strong partnerships with our clients. When you choose Macarto Services, you gain a dedicated team that works closely with you, providing ongoing support and guidance to drive your success.\n\nWe highly value the opportunity to collaborate with you and assist in propelling your real estate business to new heights. To further discuss the next steps or address any questions or concerns you may have, I am available for a call at your convenience. Please use the Calendly link below to schedule a time slot:\n\n https://calendly.com/socials-rue/30min\n\nI encourage you to seize this final opportunity to leverage the power of Macarto's AI solutions for your real estate business. Together, we can achieve remarkable results and ensure your continued growth and success in the industry.\n\nThank you for considering Macarto Services. I look forward to speaking with you soon and finalizing our partnership.",
+                      "I hope this email finds you well. I wanted to reach out one final time to emphasize the incredible opportunity awaiting your real estate business with Macarto's AI solutions. Now is the time to take action and make a decisive move towards unlocking your full potential.\n\nMacarto Services has a proven track record of empowering real estate businesses to achieve remarkable results through our tailored AI solutions. Our expertise lies in optimizing property valuations, streamlining operations, improving customer experiences, and maximizing investment opportunities through cutting-edge AI technologies.\n\nTo witness the transformative power of Macarto's AI solutions, I invite you to visit our website at [insert website link]. There, you will find detailed information about our services, client success stories, and the advantages of partnering with us.\n\nI encourage you to explore our website and discover how Macarto Services can help propel your real estate business to new heights. Don't let this opportunity pass you by! If you are ready to take the next step and capitalize on the benefits of our AI solutions, I am available to discuss your specific needs and provide a personalized proposal tailored to your business. Please feel free to reach out to me directly at\n\n https://calendly.com/socials-rue/30min\n\nWe are passionate about helping real estate businesses like yours thrive in today's competitive market. Let us be your strategic partner in achieving unparalleled success.\n\nThank you for considering Macarto Services. I eagerly await the opportunity to connect with you and assist you in your journey towards real estate excellence.",
+                      "I hope this email finds you well. I wanted to bring your attention to an exclusive, limited-time offer that Macarto Services is extending to real estate businesses like yours. This is your final opportunity to seize a promotional package that will supercharge your growth and propel your success with our AI solutions.\n\nMacarto Services has a proven track record of delivering exceptional results through our tailored AI solutions. By optimizing property valuations, streamlining operations, improving customer experiences, and maximizing investment opportunities, we have helped numerous real estate businesses achieve unparalleled success.\n\nTo ensure that you don't miss out on this extraordinary opportunity, we are offering an exclusive one-time promotional package for a limited number of clients. This package includes:\n\n1. Comprehensive AI Strategy: Our team of experts will work closely with you to develop a customized AI strategy that addresses your specific pain points and goals. This tailored approach will enable you to maximize the benefits of our AI solutions for your real estate business.\n\n2. Implementation and Integration: We will handle the seamless implementation and integration of our AI solutions into your existing systems and processes. Our team will provide the necessary support to ensure a smooth transition and minimal disruption to your operations.\n\n3. Training and Support: We are committed to your long-term success. As part of this promotional package, we will provide comprehensive training for your team to effectively utilize our AI solutions. Ongoing support will also be available to address any questions or concerns that may arise.\n\nThis one-time offer is available exclusively to a limited number of clients on a first-come, first-served basis. Don't miss your chance to revolutionize your real estate business with our AI solutions at an unbeatable value.\n\nTo take advantage of this exclusive offer or to learn more, please contact me directly at\n\ncalender\n\n.https://calendly.com/socials-rue/30min\n\nI am available to discuss the details and tailor the promotional package to align with your specific needs. This offer expires soon, so act now to secure your spot and unleash the full potential of your real estate business with Macarto's AI solutions.\n\nThank you for considering Macarto Services. We look forward to assisting you in achieving unparalleled success in the real estate industry."
+              ],
+                "subjects": ["Elevate Your Real Estate Business with Macarto's Tailored AI Solutions", "Maximising Your Real Estate Potential with Macarto's Tailored AI Solutions","Unlock Your Real Estate Success with Macarto's AI Solutions - Final Opportunity to Decide","Take Action Now and Propel Your Real Estate Business with Macarto's AI Solutions","Last Chance: Exclusive One-Time Offer to Supercharge Your Real Estate Business with Macarto's AI Solutions"]
+            }
+            //... the rest of your industries
+        };
+
+        window.onload = function() {
+            updateEmailsAndSubjects();
+        }
+
+        function updateEmailsAndSubjects() {
+            var industry = document.getElementById('industry').value;
+            var emails = emailsAndSubjectsByIndustry[industry].emails;
+            var subjects = emailsAndSubjectsByIndustry[industry].subjects;
+
+            var emailSelect = document.getElementById('email_message');
+            var subjectSelect = document.getElementById('subject');
+
+            // clear current options
+            emailSelect.innerHTML = "";
+            subjectSelect.innerHTML = "";
+
+            emails.forEach(function(email) {
+                var option = new Option(email, email);
+                emailSelect.options.add(option);
+            });
+
+            subjects.forEach(function(subject) {
+                var option = new Option(subject, subject);
+                subjectSelect.options.add(option);
+            });
+        }
+        window.onload = updateEmailsAndSubjects;  // Populate the dropdowns when the page first loads
+        document.getElementById('industry').addEventListener('change', updateEmailsAndSubjects); // Update the dropdowns whenever the selected industry changes
+    </script>
+</head>
+<body>
+
+<h2>Email Sender Form</h2>
+
+<form action="/send-email" method="post" enctype="multipart/form-data">
+    
+  <label for="industry">Industry:</label><br>
+  <select id="industry" name="industry" onchange="updateEmailsAndSubjects()">
+      <option value="Marketing">Marketing</option>
+      <option value="Recruitment">Recruitment</option>
+      <option value="Entrance Control">Entrance Control</option>
+      <option value="Finance">Finance</option>
+      <option value="Pharma">Pharma</option>
+      <option value="Insurance">Insurance</option>
+      <option value="Real Estate">Real Estate</option>
+  </select><br>
+
+  <label for="subject">Subject:</label><br>
+  <select id="subject" name="subject"></select><br>
+  
+  <label for="email_message">Email Message:</label><br>
+  <select id="email_message" name="email_message"></select><br>
+
+        <!-- Options will be populated by JavaScript -->
+    </select><br>
+
+    <label for="name">Your Name:</label><br>
+    <select id="name" name="name">
+        <option value="Ayesha Ibrahim">Ayesha Ibrahim</option>
+        <option value="Ayesha Rauf">Ayesha Rauf</option>
+        <option value="Jude">Jude</option>
+        <option value="Hassan Ali">Hassan Ali</option>
+        <option value="Huda Rajpoot">Huda Rajpoot</option>
+        <!-- Add as many names as you need -->
+    </select><br>
+    
+    <label for="email_list">Upload Email List (CSV):</label><br>
+    <label class="file-input-label" for="email_list">Choose Files</label>
+    <input type="file" id="email_list" name="email_list" class="file-input" data-file-name="" onchange="this.dataset.fileName = this.files[0].name;"><br>
+    
+    <input type="submit" value="Submit">
+    <script src="script.js"></script>
+</form> 
+
+</body>
+</html>
